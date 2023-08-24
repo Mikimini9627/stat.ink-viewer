@@ -155,6 +155,15 @@ namespace s3s_viewer
                 // ファイル書込み
                 File.WriteAllText(".\\s3s-master\\s3s.py", strData);
 
+                // ソースファイルを読み込む
+                strData = File.ReadAllText(".\\s3s-master\\iksm.py");
+
+                // 時間部分を変更
+                strData = strData.Replace("USE_OLD_NSOAPP_VER    = False", "USE_OLD_NSOAPP_VER    = True");
+
+                // ファイル書込み
+                File.WriteAllText(".\\s3s-master\\iksm.py", strData);
+
                 // プロセス情報設定
                 ProcessStartInfo psInfo = new()
                 {
